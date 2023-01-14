@@ -1,0 +1,11 @@
+@font-face { 
+	font-family: 'pixelArt'; 
+	src: url("../fonts/pixel_art/RetroGaming.ttf"); 
+} 
+
+body{
+    background-color: rgb(24, 24, 24);
+    color: white;
+    font-family: pixelArt;
+    font-size: 11px;
+}
