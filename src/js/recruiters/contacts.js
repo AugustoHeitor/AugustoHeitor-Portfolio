@@ -1,4 +1,4 @@
-import { contacts } from "./database.js";
+import { contacts } from "../database.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   
