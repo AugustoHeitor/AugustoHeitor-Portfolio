@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   let help = document.querySelector("#help");
 

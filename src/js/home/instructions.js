@@ -1,8 +1,11 @@
+/*Imports*/
 import { characterX, characterY } from "./character.js";
 
+/*Canvas*/
 let canvas = document.querySelector("canvas");
 let ctx = canvas.getContext("2d");
 
+/*Key Space*/
 let space = new Image()
 space.src = "./src/imgs/instructions/space.png";
 

@@ -1,3 +1,4 @@
+/*Contacts*/
 export const contacts = [
   {
     name: "Instagram",
@@ -17,6 +18,7 @@ export const contacts = [
   },
 ];
 
+/*HardSkills*/
 export const hardSkills = [
   {
     skill: "HTML",
@@ -68,6 +70,7 @@ export const hardSkills = [
   },
 ];
 
+/*SoftSkills*/
 export const softSkills = [
   {
     skill: "Gestão de Tempo",
@@ -96,6 +99,7 @@ export const softSkills = [
   },
 ];
 
+/*Projects*/
 export const projects = [
   {
     name: "Pixel Animation",

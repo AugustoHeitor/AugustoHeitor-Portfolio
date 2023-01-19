@@ -1,5 +1,7 @@
+/*Imports*/
 import { projects } from "./database.js";
 
+/*Event to add projects on pages*/
 document.addEventListener("DOMContentLoaded", () => {
   let list = document.querySelector("#list-projects");
 

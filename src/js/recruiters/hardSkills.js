@@ -1,5 +1,7 @@
+/*Imports*/
 import { hardSkills } from "./database.js";
 
+/*Event to add hardSkills on pages*/
 document.addEventListener("DOMContentLoaded", () => {
   let list = document.querySelector("#list-hard-skills");
   let body = document.querySelector("body");
@@ -40,4 +42,3 @@ document.addEventListener("DOMContentLoaded", () => {
     list.append(li);
   });
 });
- 

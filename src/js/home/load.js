@@ -1,11 +1,22 @@
-import { pageLivingRoom, pageStart, pageHall, 
-  pageBedroom, pageTrophyRoom, pageKitchen, pageBathroom, } from "./pages.js";
+/*Imports*/
+import {
+  pageLivingRoom,
+  pageStart,
+  pageHall,
+  pageBedroom,
+  pageTrophyRoom,
+  pageKitchen,
+  pageBathroom,
+} from "./pages.js";
 import { character, characterX, characterY } from "./character.js";
 
+/*Canvas*/
 let canvas = document.querySelector("canvas");
-let ctx = canvas.getContext("2d"); 
+let ctx = canvas.getContext("2d");
 
-const game = () => {
+/*Load*/
+const load = () => {
+
   const page = localStorage.getItem("page");
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -16,19 +27,19 @@ const game = () => {
     pageStart();
   } else if (page === "hall") {
     pageHall();
-  }else if (page === "bedroom") {
+  } else if (page === "bedroom") {
     pageBedroom();
-  }else if (page === "trophyRoom") {
+  } else if (page === "trophyRoom") {
     pageTrophyRoom();
-  }else if (page === "kitchen") {
+  } else if (page === "kitchen") {
     pageKitchen();
-  }else if (page === "bathroom") {
+  } else if (page === "bathroom") {
     pageBathroom();
   }
 
   ctx.drawImage(character, characterX, characterY);
 
-  requestAnimationFrame(game);
+  requestAnimationFrame(load);
 };
 
-requestAnimationFrame(game);
+requestAnimationFrame(load);

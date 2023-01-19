@@ -1,7 +1,8 @@
+/*Imports*/
 import { contacts } from "../database.js";
 
+/*Event to add contacts on pages*/
 document.addEventListener("DOMContentLoaded", () => {
-  
   let list = document.querySelector("#list-contacts");
 
   contacts.map((elem) => {
@@ -13,5 +14,4 @@ document.addEventListener("DOMContentLoaded", () => {
     li.append(a);
     list.append(li);
   });
-
 });

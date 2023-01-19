@@ -1,5 +1,7 @@
+/*Imports*/
 import { softSkills } from "./database.js";
 
+/*Event to add softSkills on pages*/
 document.addEventListener("DOMContentLoaded", () => {
   let list = document.querySelector("#list-soft-skills");
   let body = document.querySelector("body");
