@@ -19,7 +19,16 @@ let ctx = canvas.getContext("2d");
 let background = new Image();
 background.src = "./src/imgs/backgrounds/outOfHome.png";
 
+background.addEventListener("load", ()=>{
+  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+})
+
 /*Pages*/
+
+tv.addEventListener("load", ()=>{
+  ctx.drawImage(tv, 315, 220, 110, 65);
+})
+
 export const pageLivingRoom = () => {
   background.src = "./src/imgs/backgrounds/livingRoom.png";
   ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
