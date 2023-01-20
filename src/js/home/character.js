@@ -5,7 +5,7 @@ import { songDoor, songFlorest, songHouse } from "./sounds.js";
 let canvas = document.querySelector("canvas");
 
 /*LocalStroage*/
-localStorage.setItem("page", "start")
+localStorage.setItem("page", "start");
 
 /*Songs*/
 songFlorest.play();
@@ -20,32 +20,21 @@ let floorLeft = 1;
 let right;
 let left;
 
-export let imgCharacterY1 = 50
-export let imgCharacterY2 = 60
-
 export let character = new Image();
-character.src = "./src/imgs/character/character.png";
-
-
+character.src = "./src/imgs/character/characterRight2.png";
 
 export let characterX = 400;
 export let characterY = 280;
 
 const mousePositionRight = (mousePosition) => {
   if (floorRight === 1) {
+    character.src = "./src/imgs/character/characterRight1.png";
     floorRight = 2;
-    imgCharacterY1 = -50
-    imgCharacterY2 = 60
-    characterX = characterX - 50
     characterX = characterX + 10;
-    characterY = 280;
   } else if (floorRight === 2) {
+    character.src = "./src/imgs/character/characterRight2.png";
     floorRight = 1;
-    imgCharacterY1 = 50
-    imgCharacterY2 = 60
-    characterX = characterX + 50
     characterX = characterX + 10;
-    characterY = 280;
   }
 
   if (characterX >= mousePosition) {
@@ -55,19 +44,13 @@ const mousePositionRight = (mousePosition) => {
 
 const mousePositionLeft = (mousePosition) => {
   if (floorLeft === 1) {
+    character.src = "./src/imgs/character/characterLeft1.png";
     floorLeft = 2;
-    imgCharacterY1 = -50
-    imgCharacterY2 = -60
-    characterX = characterX - 50
     characterX = characterX - 10;
-    characterY = 230;
   } else if (floorLeft === 2) {
+    character.src = "./src/imgs/character/characterLeft2.png";
     floorLeft = 1;
-    imgCharacterY1 = 50
-    imgCharacterY2 = -60
-    characterX = characterX + 50
     characterX = characterX - 10;
-    characterY = 230;
   }
 
   if (characterX <= mousePosition) {

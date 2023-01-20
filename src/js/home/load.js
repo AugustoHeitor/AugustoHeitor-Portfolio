@@ -8,15 +8,13 @@ import {
   pageKitchen,
   pageBathroom,
 } from "./pages.js";
-import { character, characterX, characterY, imgCharacterY1, imgCharacterY2 } from "./character.js";
+import { character, characterX, characterY } from "./character.js";
 
 /*Canvas*/
 let canvas = document.querySelector("canvas");
 let ctx = canvas.getContext("2d");
-ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 /*Load*/
-
 const load = () => {
 
   const page = localStorage.getItem("page");
@@ -39,11 +37,9 @@ const load = () => {
     pageBathroom();
   }
 
-  ctx.drawImage(character, imgCharacterY1, imgCharacterY2, 102, 129, characterX, characterY, 102, 129,);
+  ctx.drawImage(character, characterX, characterY);
 
-  requestAnimationFrame(load, canvas);
+  requestAnimationFrame(load);
 };
 
-requestAnimationFrame(load, canvas)
-
-
+requestAnimationFrame(load);
