@@ -20,19 +20,28 @@ let floorLeft = 1;
 let right;
 let left;
 
-export let character = new Image();
-character.src = "./src/imgs/character/characterRight2.png";
+export let characterRight1 = new Image()
+characterRight1.src = "./src/imgs/character/characterRight2.png";
+
+export let characterRight2 = new Image()
+characterRight2.src = "./src/imgs/character/characterRight1.png";
+
+export let characterLeft1 = new Image()
+characterLeft1.src = "./src/imgs/character/characterLeft2.png";
+
+export let characterLeft2 = new Image()
+characterLeft2.src = "./src/imgs/character/characterLeft1.png";
 
 export let characterX = 400;
 export let characterY = 280;
 
 const mousePositionRight = (mousePosition) => {
   if (floorRight === 1) {
-    character.src = "./src/imgs/character/characterRight1.png";
+    localStorage.setItem("character", "right1")
     floorRight = 2;
     characterX = characterX + 10;
   } else if (floorRight === 2) {
-    character.src = "./src/imgs/character/characterRight2.png";
+    localStorage.setItem("character", "right2")
     floorRight = 1;
     characterX = characterX + 10;
   }
@@ -44,11 +53,11 @@ const mousePositionRight = (mousePosition) => {
 
 const mousePositionLeft = (mousePosition) => {
   if (floorLeft === 1) {
-    character.src = "./src/imgs/character/characterLeft1.png";
+    localStorage.setItem("character", "left1")
     floorLeft = 2;
     characterX = characterX - 10;
   } else if (floorLeft === 2) {
-    character.src = "./src/imgs/character/characterLeft2.png";
+    localStorage.setItem("character", "left2")
     floorLeft = 1;
     characterX = characterX - 10;
   }
