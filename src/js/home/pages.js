@@ -1,9 +1,11 @@
 /*Imports*/
-import { instructionBrowse } from "./instructions.js";
+import { instructionBrowse, instructionMouse } from "./instructions.js";
+
 import { characterX } from "./character.js";
 import {
   turnOnTv,
   tv,
+  tvOn,
   mousePositionX,
   mousePositionY,
   openModal,
@@ -16,12 +18,27 @@ let canvas = document.querySelector("canvas");
 let ctx = canvas.getContext("2d");
 
 /*Background*/
-let background = new Image();
-background.src = "./src/imgs/backgrounds/outOfHome.png";
+let backgroundOutOfHome = new Image();
+backgroundOutOfHome.src = "./src/imgs/backgrounds/outOfHome.png";
 
-background.addEventListener("load", ()=>{
-  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-})
+let backgroundLivingRoom = new Image()
+backgroundLivingRoom.src = "./src/imgs/backgrounds/livingRoom.png";
+
+let backgroundBedroom = new Image()
+backgroundBedroom.src = "./src/imgs/backgrounds/bedroom.png";
+
+let backgroundTrophyRoom = new Image()
+backgroundTrophyRoom.src = "./src/imgs/backgrounds/trophyRoom.png";
+
+let backgroundHall = new Image()
+backgroundHall.src = "./src/imgs/backgrounds/hall.png";
+
+let backgroundEmptyRoom = new Image()
+backgroundEmptyRoom.src = "./src/imgs/backgrounds/emptyRoom.png";
+
+
+let backgroundKitchen = new Image()
+backgroundKitchen.src = "./src/imgs/backgrounds/kitchen.png";
 
 /*Pages*/
 
@@ -30,10 +47,15 @@ tv.addEventListener("load", ()=>{
 })
 
 export const pageLivingRoom = () => {
-  background.src = "./src/imgs/backgrounds/livingRoom.png";
-  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+  ctx.drawImage(backgroundLivingRoom, 0, 0, canvas.width, canvas.height);
 
-  ctx.drawImage(tv, 315, 220, 110, 65);
+  let tvStatus = localStorage.getItem("tv")
+
+  if(tvStatus === "off"){
+    ctx.drawImage(tv, 315, 220, 110, 65);
+  }else if(tvStatus === "on"){
+    ctx.drawImage(tvOn, 315, 220, 110, 65);
+  }
 
   turnOnTv();
 
@@ -46,16 +68,14 @@ export const pageLivingRoom = () => {
 };
 
 export const pageStart = () => {
-  background.src = "./src/imgs/backgrounds/outOfHome.png";
-  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+  ctx.drawImage(backgroundOutOfHome, 0, 0, canvas.width, canvas.height);
   if (characterX >= 610 && characterX <= 640) {
     instructionBrowse();
   }
 };
 
 export const pageHall = () => {
-  background.src = "./src/imgs/backgrounds/hall.png";
-  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+  ctx.drawImage(backgroundHall, 0, 0, canvas.width, canvas.height);
   if (
     (characterX >= 40 && characterX <= 70) ||
     (characterX >= 220 && characterX <= 250) ||
@@ -68,8 +88,7 @@ export const pageHall = () => {
 };
 
 export const pageBedroom = () => {
-  background.src = "./src/imgs/backgrounds/bedroom.png";
-  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+  ctx.drawImage(backgroundBedroom, 0, 0, canvas.width, canvas.height);
   if (characterX >= 40 && characterX <= 70) {
     instructionBrowse();
   }
@@ -91,13 +110,12 @@ export const pageBedroom = () => {
     lockMouse === false &&
     modal === false
   ) {
-    instructionBrowse();
+    instructionMouse()
   }
 };
 
 export const pageTrophyRoom = () => {
-  background.src = "./src/imgs/backgrounds/trophyRoom.png";
-  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+  ctx.drawImage(backgroundTrophyRoom, 0, 0, canvas.width, canvas.height);
   if (characterX >= 40 && characterX <= 70) {
     instructionBrowse();
   }
@@ -157,7 +175,7 @@ export const pageTrophyRoom = () => {
     lockMouse === false &&
     modal === false
   ) {
-    instructionBrowse();
+    instructionMouse()
   } else if (
     mousePositionX >= 180 &&
     mousePositionX <= 250 &&
@@ -166,7 +184,7 @@ export const pageTrophyRoom = () => {
     lockMouse === false &&
     modal === false
   ) {
-    instructionBrowse();
+    instructionMouse()
   } else if (
     mousePositionX >= 310 &&
     mousePositionX <= 380 &&
@@ -175,7 +193,7 @@ export const pageTrophyRoom = () => {
     lockMouse === false &&
     modal === false
   ) {
-    instructionBrowse();
+    instructionMouse()
   } else if (
     mousePositionX >= 180 &&
     mousePositionX <= 250 &&
@@ -184,7 +202,7 @@ export const pageTrophyRoom = () => {
     lockMouse === false &&
     modal === false
   ) {
-    instructionBrowse();
+    instructionMouse()
   } else if (
     mousePositionX >= 310 &&
     mousePositionX <= 380 &&
@@ -193,21 +211,19 @@ export const pageTrophyRoom = () => {
     lockMouse === false &&
     modal === false
   ) {
-    instructionBrowse();
+    instructionMouse()
   }
 };
 
 export const pageKitchen = () => {
-  background.src = "./src/imgs/backgrounds/emptyRoom.png";
-  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+  ctx.drawImage(backgroundKitchen, 0, 0, canvas.width, canvas.height);
   if (characterX >= 40 && characterX <= 70) {
     instructionBrowse();
   }
 };
 
 export const pageBathroom = () => {
-  background.src = "./src/imgs/backgrounds/emptyRoom.png";
-  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+  ctx.drawImage(backgroundEmptyRoom, 0, 0, canvas.width, canvas.height);
   if (characterX >= 40 && characterX <= 70) {
     instructionBrowse();
   }

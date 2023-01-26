@@ -7,6 +7,8 @@ let canvas = document.querySelector("canvas");
 /*LocalStroage*/
 localStorage.setItem("page", "start");
 
+localStorage.setItem("character", "right1")
+
 /*Songs*/
 songFlorest.play();
 

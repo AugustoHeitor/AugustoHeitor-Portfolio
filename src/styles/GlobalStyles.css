@@ -1,11 +1,8 @@
-@font-face { 
-	font-family: 'pixelArt'; 
-	src: url("../fonts/pixel_art/RetroGaming.ttf"); 
-} 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body{
+    font-family: 'Roboto', sans-serif;
     background-color: rgb(29, 29, 29);
     color: white;
-    font-family: pixelArt;
-    font-size: 11px;
+    font-size: 18px;
 }
