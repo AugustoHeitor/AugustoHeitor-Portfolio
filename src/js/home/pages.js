@@ -1,5 +1,5 @@
 /*Imports*/
-import { instructionBrowse, instructionMouse } from "./instructions.js";
+import { instructionBrowse, instructionInteract, instructionMouse } from "./instructions.js";
 
 import { characterX } from "./character.js";
 import {
@@ -63,6 +63,12 @@ export const pageLivingRoom = () => {
     (characterX >= 690 && characterX <= 740)
   ) {
     instructionBrowse();
+  }
+
+  if (
+    (characterX >= 340 && characterX <= 360)
+  ) {
+    instructionInteract()
   }
 };
 
