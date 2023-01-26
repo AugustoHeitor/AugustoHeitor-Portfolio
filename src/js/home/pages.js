@@ -33,9 +33,8 @@ backgroundTrophyRoom.src = "./src/imgs/backgrounds/trophyRoom.png";
 let backgroundHall = new Image()
 backgroundHall.src = "./src/imgs/backgrounds/hall.png";
 
-let backgroundEmptyRoom = new Image()
-backgroundEmptyRoom.src = "./src/imgs/backgrounds/emptyRoom.png";
-
+let backgroundBathroom = new Image()
+backgroundBathroom.src = "./src/imgs/backgrounds/bathroom.png";
 
 let backgroundKitchen = new Image()
 backgroundKitchen.src = "./src/imgs/backgrounds/kitchen.png";
@@ -223,7 +222,7 @@ export const pageKitchen = () => {
 };
 
 export const pageBathroom = () => {
-  ctx.drawImage(backgroundEmptyRoom, 0, 0, canvas.width, canvas.height);
+  ctx.drawImage(backgroundBathroom, 0, 0, canvas.width, canvas.height);
   if (characterX >= 40 && characterX <= 70) {
     instructionBrowse();
   }
