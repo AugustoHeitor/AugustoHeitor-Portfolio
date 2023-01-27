@@ -1,7 +1,7 @@
 /*Imports*/
 import { characterX } from "./character.js";
 import { songTv } from "./sounds.js";
-import { hardSkills, projects } from "../recruiters/database.js";
+import { hardSkills, projects, courses } from "../recruiters/database.js";
 
 /*Key*/
 
@@ -18,7 +18,7 @@ window.document.addEventListener("keyup", (e) => {
       setTimeout(() => {
         lockKey = false;
       }, 1000);
-    }else if(characterX >= 195 && characterX <= 225 && page === "bedroom"){
+    } else if (characterX >= 195 && characterX <= 225 && page === "bedroom") {
       code = e.code;
       lockKey = true;
       setTimeout(() => {
@@ -26,8 +26,6 @@ window.document.addEventListener("keyup", (e) => {
       }, 1000);
     }
   }
-
-  
 });
 
 /*Mouse*/
@@ -89,6 +87,22 @@ window.addEventListener("click", (e) => {
       page === "trophyRoom"
     ) {
       modal = true;
+    } else if (
+      mousePositionX >= 460 &&
+      mousePositionX <= 580 &&
+      mousePositionY >= 90 &&
+      mousePositionY <= 260 &&
+      page === "trophyRoom"
+    ) {
+      modal = true;
+    } else if (
+      mousePositionX >= 650 &&
+      mousePositionX <= 765 &&
+      mousePositionY >= 90 &&
+      mousePositionY <= 260 &&
+      page === "trophyRoom"
+    ) {
+      modal = true;
     }
   }
 });
@@ -110,7 +124,7 @@ export const openModalHardSkill = (dataSkill) => {
 
   const skill = hardSkills.find((elem) => elem.skill === dataSkill);
 
-  console.log("teste")
+  console.log("teste");
 
   let html = `
         <div id="modal-hard-skill">
@@ -168,6 +182,33 @@ export const openModalProjects = () => {
   });
 };
 
+export const openModalCourses = (name) => {
+  modal = false;
+  lockMouse = true;
+
+  const course = courses.find((elem) => elem.name === name);
+
+  let html = `
+        <div id="modal-courses">
+            <div id="cont-courses">
+            <span id="close">X</span>
+            <h3>${course.name}</h3>
+            <p>${course.text}</p>
+            </div>
+        </div>
+    `;
+
+  screen.insertAdjacentHTML("beforeend", html);
+
+  let close = document.getElementById("close");
+
+  close.addEventListener("click", () => {
+    let modal = document.getElementById("modal-courses");
+    screen.removeChild(modal);
+    lockMouse = false;
+  });
+};
+
 /*TurnOnTv*/
 
 export let tv = new Image();
@@ -197,7 +238,12 @@ export const turnOnTv = () => {
 
 export const turnOnComputer = () => {
   let page = localStorage.getItem("page");
-  if (characterX >= 195 && characterX <= 225 && page === "bedroom" && code === "KeyZ") {
+  if (
+    characterX >= 195 &&
+    characterX <= 225 &&
+    page === "bedroom" &&
+    code === "KeyZ"
+  ) {
     if (characterX >= 195 && characterX <= 225 && page === "bedroom") {
       modal = true;
       openModalProjects();

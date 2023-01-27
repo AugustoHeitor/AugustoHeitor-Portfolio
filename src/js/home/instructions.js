@@ -26,5 +26,5 @@ export const instructionInteract = () => {
 };
 
 export const instructionMouse = () => {
-  ctx.drawImage(interrogation, mousePositionX + 50, mousePositionY - 50);
+  ctx.drawImage(interrogation, mousePositionX + 10, mousePositionY - 30);
 };

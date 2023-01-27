@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
             <span id="close">X</span>
              <div>
               <h3>${skill.skill}</h3>
-              <p>Conhecimento: ${skill.knowledge}</p>
              </div>
               <p>${skill.about}</p>
             </div>

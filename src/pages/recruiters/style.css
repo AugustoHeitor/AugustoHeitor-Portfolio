@@ -54,11 +54,12 @@ body {
 .modal-skills {
   position: relative;
   background-color: rgb(49, 49, 49);
-  max-width: 500px;
+  max-width: 600px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   padding: 30px;
   border-radius: 3px;
   gap: 30px;
@@ -96,11 +97,7 @@ a:hover {
 }
 
 h2 {
-  font-size: 20px;
-}
-
-p {
-  font-size: 14px;
+  font-size: 22px;
 }
 
 main {

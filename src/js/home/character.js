@@ -1,5 +1,6 @@
 /*Imports*/
 import { songDoor, songFlorest, songHouse } from "./sounds.js";
+import { modalHelp } from "./modal.js"
 
 /*Canvas*/
 let canvas = document.querySelector("canvas");
@@ -7,10 +8,20 @@ let canvas = document.querySelector("canvas");
 /*LocalStroage*/
 localStorage.setItem("page", "start");
 
-localStorage.setItem("character", "right1")
+localStorage.setItem("character", "right1");
 
 /*Songs*/
-songFlorest.play();
+export const onSong = () => {
+  let page = localStorage.getItem("page");
+  if (modalHelp === true) {
+    songFlorest.pause();
+    songHouse.pause();
+  } else if (page === "start") {
+    songFlorest.play();
+  } else {
+    songHouse.play();
+  }
+};
 
 /*Key*/
 let lockKey = false;
@@ -22,16 +33,16 @@ let floorLeft = 1;
 let right;
 let left;
 
-export let characterRight1 = new Image()
+export let characterRight1 = new Image();
 characterRight1.src = "./src/imgs/character/characterRight2.png";
 
-export let characterRight2 = new Image()
+export let characterRight2 = new Image();
 characterRight2.src = "./src/imgs/character/characterRight1.png";
 
-export let characterLeft1 = new Image()
+export let characterLeft1 = new Image();
 characterLeft1.src = "./src/imgs/character/characterLeft2.png";
 
-export let characterLeft2 = new Image()
+export let characterLeft2 = new Image();
 characterLeft2.src = "./src/imgs/character/characterLeft1.png";
 
 export let characterX = 400;
@@ -39,11 +50,11 @@ export let characterY = 280;
 
 const mousePositionRight = (mousePosition) => {
   if (floorRight === 1) {
-    localStorage.setItem("character", "right1")
+    localStorage.setItem("character", "right1");
     floorRight = 2;
     characterX = characterX + 10;
   } else if (floorRight === 2) {
-    localStorage.setItem("character", "right2")
+    localStorage.setItem("character", "right2");
     floorRight = 1;
     characterX = characterX + 10;
   }
@@ -55,11 +66,11 @@ const mousePositionRight = (mousePosition) => {
 
 const mousePositionLeft = (mousePosition) => {
   if (floorLeft === 1) {
-    localStorage.setItem("character", "left1")
+    localStorage.setItem("character", "left1");
     floorLeft = 2;
     characterX = characterX - 10;
   } else if (floorLeft === 2) {
-    localStorage.setItem("character", "left2")
+    localStorage.setItem("character", "left2");
     floorLeft = 1;
     characterX = characterX - 10;
   }

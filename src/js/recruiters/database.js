@@ -43,7 +43,7 @@ export const hardSkills = [
   {
     skill: "React",
     about:
-      "Trata-se de uma biblioteca JavaScript para a criação de interfaces de usuário",
+      "Trata-se de uma biblioteca JavaScript para a criação de interfaces de usuário.",
   },
   {
     skill: "TypeScript",
@@ -112,5 +112,17 @@ export const projects = [
   {
     name: "Nu Kenzie V2",
     href: "https://kenzie-academy-brasil-developers-react-entrega-kenzi-b00gqiby6.vercel.app/",
+  },
+];
+
+/*Courses*/
+export const courses = [
+  {
+    name: "Senai - Front-End",
+    text: "HTML, CSS e JavaScript, Fundamentos da Indústria 4.0, Fundamentos da Qualidade e Produtividade, Fundamentos da Tecnologia da Informação e Comunicação, Saúde e Segurança no Trabalho e Sustentabilidade nos Processos Industriais, Metodologias Ágeis, Versionamento e Lógica de Programação.",
+  },
+  {
+    name: "Kenzie Academy Brasil - Front-End",
+    text: "Desenvolvimento front-end, soft skills necessárias para o mercado de trabalho, entre as linguagens e tecnologias aprendidas, estão HTML5, CCS3, JavaScript (ES6+), React, TypeScript, Node.js",
   },
 ];

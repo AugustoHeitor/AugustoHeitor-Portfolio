@@ -16,7 +16,8 @@ import {
   lockMouse,
   modal,
   openModalProjects,
-  turnOnComputer
+  turnOnComputer,
+  openModalCourses
 } from "./interactions.js";
 
 /*Canvas*/
@@ -184,6 +185,24 @@ export const pageTrophyRoom = () => {
     modal === true
   ) {
     openModalHardSkill("CSS");
+  }else if (
+    mousePositionX >= 460 &&
+    mousePositionX <= 580 &&
+    mousePositionY >= 90 &&
+    mousePositionY <= 260 &&
+    lockMouse === false &&
+    modal === true
+  ) {
+    openModalCourses("Senai - Front-End")
+  }else if (
+    mousePositionX >= 650 &&
+    mousePositionX <= 765 &&
+    mousePositionY >= 90 &&
+    mousePositionY <= 260 &&
+    lockMouse === false &&
+    modal === true
+  ) {
+    openModalCourses("Kenzie Academy Brasil - Front-End")
   }
 
   if (
@@ -231,7 +250,26 @@ export const pageTrophyRoom = () => {
     modal === false
   ) {
     instructionMouse();
+  }else if (
+    mousePositionX >= 460 &&
+    mousePositionX <= 580 &&
+    mousePositionY >= 90 &&
+    mousePositionY <= 260 &&
+    lockMouse === false &&
+    modal === false
+  ) {
+    instructionMouse();
+  }else if (
+    mousePositionX >= 650 &&
+    mousePositionX <= 765 &&
+    mousePositionY >= 90 &&
+    mousePositionY <= 260 &&
+    lockMouse === false &&
+    modal === false
+  ) {
+    instructionMouse();
   }
+  
 };
 
 export const pageKitchen = () => {
