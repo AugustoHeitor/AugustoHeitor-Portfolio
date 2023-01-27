@@ -1,5 +1,9 @@
 /*Imports*/
-import { instructionBrowse, instructionInteract, instructionMouse } from "./instructions.js";
+import {
+  instructionBrowse,
+  instructionInteract,
+  instructionMouse,
+} from "./instructions.js";
 
 import { characterX } from "./character.js";
 import {
@@ -8,9 +12,11 @@ import {
   tvOn,
   mousePositionX,
   mousePositionY,
-  openModal,
+  openModalHardSkill,
   lockMouse,
   modal,
+  openModalProjects,
+  turnOnComputer
 } from "./interactions.js";
 
 /*Canvas*/
@@ -21,38 +27,38 @@ let ctx = canvas.getContext("2d");
 let backgroundOutOfHome = new Image();
 backgroundOutOfHome.src = "./src/imgs/backgrounds/outOfHome.png";
 
-let backgroundLivingRoom = new Image()
+let backgroundLivingRoom = new Image();
 backgroundLivingRoom.src = "./src/imgs/backgrounds/livingRoom.png";
 
-let backgroundBedroom = new Image()
+let backgroundBedroom = new Image();
 backgroundBedroom.src = "./src/imgs/backgrounds/bedroom.png";
 
-let backgroundTrophyRoom = new Image()
+let backgroundTrophyRoom = new Image();
 backgroundTrophyRoom.src = "./src/imgs/backgrounds/trophyRoom.png";
 
-let backgroundHall = new Image()
+let backgroundHall = new Image();
 backgroundHall.src = "./src/imgs/backgrounds/hall.png";
 
-let backgroundBathroom = new Image()
+let backgroundBathroom = new Image();
 backgroundBathroom.src = "./src/imgs/backgrounds/bathroom.png";
 
-let backgroundKitchen = new Image()
+let backgroundKitchen = new Image();
 backgroundKitchen.src = "./src/imgs/backgrounds/kitchen.png";
 
 /*Pages*/
 
-tv.addEventListener("load", ()=>{
+tv.addEventListener("load", () => {
   ctx.drawImage(tv, 315, 220, 110, 65);
-})
+});
 
 export const pageLivingRoom = () => {
   ctx.drawImage(backgroundLivingRoom, 0, 0, canvas.width, canvas.height);
 
-  let tvStatus = localStorage.getItem("tv")
+  let tvStatus = localStorage.getItem("tv");
 
-  if(tvStatus === "off"){
+  if (tvStatus === "off") {
     ctx.drawImage(tv, 315, 220, 110, 65);
-  }else if(tvStatus === "on"){
+  } else if (tvStatus === "on") {
     ctx.drawImage(tvOn, 315, 220, 110, 65);
   }
 
@@ -65,10 +71,8 @@ export const pageLivingRoom = () => {
     instructionBrowse();
   }
 
-  if (
-    (characterX >= 340 && characterX <= 360)
-  ) {
-    instructionInteract()
+  if (characterX >= 340 && characterX <= 360) {
+    instructionInteract();
   }
 };
 
@@ -106,7 +110,7 @@ export const pageBedroom = () => {
     lockMouse === false &&
     modal === true
   ) {
-    openModal("React");
+    openModalHardSkill("React");
   } else if (
     mousePositionX >= 150 &&
     mousePositionX <= 250 &&
@@ -115,8 +119,18 @@ export const pageBedroom = () => {
     lockMouse === false &&
     modal === false
   ) {
-    instructionMouse()
+    instructionMouse();
   }
+
+  if (
+    characterX >= 195 &&
+    characterX <= 225 &&
+    lockMouse === false &&
+    modal === false
+  ) {
+    instructionInteract();
+    turnOnComputer();
+  } 
 };
 
 export const pageTrophyRoom = () => {
@@ -133,7 +147,7 @@ export const pageTrophyRoom = () => {
     lockMouse === false &&
     modal === true
   ) {
-    openModal("TypeScript");
+    openModalHardSkill("TypeScript");
   } else if (
     mousePositionX >= 180 &&
     mousePositionX <= 250 &&
@@ -142,7 +156,7 @@ export const pageTrophyRoom = () => {
     lockMouse === false &&
     modal === true
   ) {
-    openModal("Git");
+    openModalHardSkill("Git");
   } else if (
     mousePositionX >= 310 &&
     mousePositionX <= 380 &&
@@ -151,7 +165,7 @@ export const pageTrophyRoom = () => {
     lockMouse === false &&
     modal === true
   ) {
-    openModal("HTML");
+    openModalHardSkill("HTML");
   } else if (
     mousePositionX >= 180 &&
     mousePositionX <= 250 &&
@@ -160,7 +174,7 @@ export const pageTrophyRoom = () => {
     lockMouse === false &&
     modal === true
   ) {
-    openModal("JavaScript");
+    openModalHardSkill("JavaScript");
   } else if (
     mousePositionX >= 310 &&
     mousePositionX <= 380 &&
@@ -169,7 +183,7 @@ export const pageTrophyRoom = () => {
     lockMouse === false &&
     modal === true
   ) {
-    openModal("CSS");
+    openModalHardSkill("CSS");
   }
 
   if (
@@ -180,7 +194,7 @@ export const pageTrophyRoom = () => {
     lockMouse === false &&
     modal === false
   ) {
-    instructionMouse()
+    instructionMouse();
   } else if (
     mousePositionX >= 180 &&
     mousePositionX <= 250 &&
@@ -189,7 +203,7 @@ export const pageTrophyRoom = () => {
     lockMouse === false &&
     modal === false
   ) {
-    instructionMouse()
+    instructionMouse();
   } else if (
     mousePositionX >= 310 &&
     mousePositionX <= 380 &&
@@ -198,7 +212,7 @@ export const pageTrophyRoom = () => {
     lockMouse === false &&
     modal === false
   ) {
-    instructionMouse()
+    instructionMouse();
   } else if (
     mousePositionX >= 180 &&
     mousePositionX <= 250 &&
@@ -207,7 +221,7 @@ export const pageTrophyRoom = () => {
     lockMouse === false &&
     modal === false
   ) {
-    instructionMouse()
+    instructionMouse();
   } else if (
     mousePositionX >= 310 &&
     mousePositionX <= 380 &&
@@ -216,7 +230,7 @@ export const pageTrophyRoom = () => {
     lockMouse === false &&
     modal === false
   ) {
-    instructionMouse()
+    instructionMouse();
   }
 };
 

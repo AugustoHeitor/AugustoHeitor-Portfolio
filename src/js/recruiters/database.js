@@ -22,49 +22,41 @@ export const contacts = [
 export const hardSkills = [
   {
     skill: "HTML",
-    knowledge: "Avançado",
     about:
       "Trata-se de uma linguagem de marcação para desenvolver páginas e documentos eletrônicos para a internet, fornecendo informações para usuários, navegadores e mecanismos de busca.",
   },
   {
     skill: "CSS",
-    knowledge: "Avançado",
     about:
       "Trata-se de uma linguagem de folhas de estilos que é utilizada para definir como os documentos escritos na linguagem de marcação (HTML ou XML), devem ser apresentados em termos de formatação, de layout.",
   },
   {
     skill: "JavaScript",
-    knowledge: "Avançado",
     about:
       "Trata-se de uma linguagem de programação de alto nível criada, a princípio, para ser executada em navegadores e manipular comportamentos de páginas web.",
   },
   {
     skill: "Interações com API",
-    knowledge: "Avançado",
     about:
       "Trata-se de uma forma de comunicação entre sistemas, A integração entre dois sistemas, em que um deles fornece informações e serviços.",
   },
   {
     skill: "React",
-    knowledge: "Intermediário",
     about:
       "Trata-se de uma biblioteca JavaScript para a criação de interfaces de usuário",
   },
   {
     skill: "TypeScript",
-    knowledge: "Intermediário",
     about:
       "Trata-se de um superconjunto de JavaScript, o TypeScript foi criado com o objetivo de incluir recursos que não estão presentes no JS. Por meio dele é possível definir a tipagem estática, parâmetros e retorno de funções.",
   },
   {
     skill: "Git",
-    knowledge: "Intermediário",
     about:
       "Trata-se de um sistema de controle de versão, este sistema de controle possue a função de registrar quaisquer alterações feitas em cima de um código, armazenando essas informações e permitindo que, caso seja necessário, um(a) programador(a) possa regredir a versões anteriores de uma aplicação de modo simples e rápido.",
   },
   {
     skill: "Noções de UX",
-    knowledge: "Básico",
     about:
       "Trata-se da experiência do usuário, visa proporcionar ao usuário sempre a melhor experiência. Tem a finalidade de melhorar todos os aspectos da interação humana, não visando apenas em sistemas, mas também em produtos e serviços.",
   },

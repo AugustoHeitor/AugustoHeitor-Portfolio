@@ -8,25 +8,30 @@ body {
 
 body,
 .screen,
-#modal,
-#modal > div {
+#modal-hard-skill,
+#modal-hard-skill > div,
+#modal-projects, 
+#modal-projects > div {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .screen,
-#modal > div {
+#modal-hard-skill > div,
+#modal-projects > div {
   position: relative;
 }
 
-#modal,
-#close {
+#modal-hard-skill,
+#close,
+#modal-projects{
   position: absolute;
 }
 
-#modal,
-#modal > div {
+#modal-hard-skill,
+#modal-hard-skill > div,
+#modal-projects {
   width: 100%;
 }
 
@@ -39,12 +44,12 @@ body,
   height: 550px;
 }
 
-#modal {
+#modal-hard-skill, #modal-projects {
   height: 100%;
   background-color: rgba(39, 38, 38, 0.116);
 }
 
-#modal > div {
+#modal-hard-skill > div, #modal-projects > div {
   background-color: rgb(49, 49, 49);
   max-width: 500px;
   padding: 30px;
@@ -59,7 +64,7 @@ body,
   color: antiquewhite;
 }
 
-#close:hover {
+#close:hover, a:hover {
   color: green;
   cursor: pointer;
 }
@@ -67,3 +72,13 @@ body,
 h3 {
   font-weight: normal;
 }
+
+#modal-projects > div{
+  flex-direction: column;
+}
+
+a{
+  user-select: none;
+  color: white;
+}
+
