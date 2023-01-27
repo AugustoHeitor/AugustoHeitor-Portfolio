@@ -4,15 +4,12 @@ export let modalHelp = true;
 
 document.addEventListener("DOMContentLoaded", () => {
   let help = document.querySelector("#open-modal");
-  let body = document.querySelector("body");
 
   createModal();
 
   help.addEventListener("click", () => {
     modalHelp = true;
     onSong();
-    body.style.overflowY = "auto";
-    body.style.overflowX = "hidden";
     createModal();
   });
 });
@@ -56,6 +53,5 @@ const createModal = () => {
     onSong();
     body.removeChild(modal);
     window.scrollBy(-800, -1300);
-    body.style.overflow = "hidden";
   });
 };
